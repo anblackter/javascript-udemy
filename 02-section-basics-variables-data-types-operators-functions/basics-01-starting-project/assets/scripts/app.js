@@ -3,9 +3,16 @@
 const defaultResult = 0;
 let currentResult = defaultResult;
 
-function add(num1, num2) {
-  currentResult = currentResult + userInput.value;
-  outputResult(currentResult, '');
+function getUserNumberInput(){
+  return parseFloat(userInput.value);
+}
+
+function add() {
+  const enteredNumber = getUserNumberInput();
+  const calcDescription = `${currentResult} + ${enteredNumber}`;
+  currentResult = currentResult + enteredNumber;
+  // currentResult = currentResult + +userInput.value; //Short way to do parseInt
+  outputResult(currentResult, calcDescription);
 }
 
 addBtn.addEventListener('click', add);
