@@ -7,12 +7,23 @@ function getUserNumberInput(){
   return parseFloat(userInput.value);
 }
 
+function createAndWriteLog(operator, resultBeforeCalc, calcNumber){
+  const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
+  outputResult(currentResult, calcDescription);
+}
+
 function add() {
   const enteredNumber = getUserNumberInput();
-  const calcDescription = `${currentResult} + ${enteredNumber}`;
+  const initialResult = currentResult;
   currentResult = currentResult + enteredNumber;
-  // currentResult = currentResult + +userInput.value; //Short way to do parseInt
-  outputResult(currentResult, calcDescription);
+  createAndWriteLog('+', initialResult, enteredNumber)
+}
+
+function substract() {
+  const enteredNumber = getUserNumberInput();
+  const initialResult = currentResult;
+  currentResult = currentResult - enteredNumber;
+  createAndWriteLog('-', initialResult, enteredNumber)
 }
 
 addBtn.addEventListener('click', add);
