@@ -127,6 +127,7 @@ function endRound() {
 }
 
 function attackMonster(mode) {
+  // let maxDamage = mode === MODE_ATTACK ? ATTACK_VALUE : STRONG_ATTACK_VALUE;  // Ternary operator
   let maxDamage;
   let logEvent;
   if (mode === MODE_ATTACK) {
